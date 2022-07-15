@@ -33,13 +33,13 @@ async function setUp(){
     let minsToComeback = Math.floor(dateToComeback.diff(dayjs(), 'minute') - (hoursToComeback*60));
     minsToComeback = Math.floor(minsToComeback - ((daysToComeback*24)*60));
 
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`Days: ${daysToMeet}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`Hours: ${hoursToMeet}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`Minutes: ${minsToMeet}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`Days: ${daysToComeback}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`Hours: ${hoursToComeback}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`Minutes: ${minsToComeback}`);
-    // client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.lastCheckChannel).setName(`${dayjs().format('DD/MM/YYYY HH:mm')}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`Days: ${daysToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`Hours: ${hoursToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`Minutes: ${minsToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`Days: ${daysToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`Hours: ${hoursToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`Minutes: ${minsToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.lastCheckChannel).setName(`${dayjs().format('DD/MM/YYYY HH:mm')}`);
     const checkChannel = client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.checkChannel);
     checkChannel.edit({ topic: `She's coming back in ${daysToComeback} days, ${hoursToComeback} hours and ${minsToComeback} minutes...` });
     // const catUrl = await axios.get(`https://api.thecatapi.com/v1/images/search`).then(function (response) { return response.data[0].url; })
