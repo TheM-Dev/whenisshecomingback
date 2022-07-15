@@ -19,18 +19,25 @@ client.on('ready', async () => {
 
 async function setUp(){
     let dateTo = dayjs(date);
-    let hours = dateTo.diff(dayjs(), 'hour');
-    let days = Math.ceil(hours/24);
-    let mins = dateTo.diff(dayjs(), 'minute') - (hours*60);
-    hours = Math.ceil((((hours/24).toFixed()*24) - hours));
+    let hours = Math.floor(dateTo.diff(dayjs(), 'hour'));
+    let days = Math.floor(hours/24).toFixed()
+    let mins = Math.floor(dateTo.diff(dayjs(), 'minute') - (hours*60));
+    hours = Math.floor(hours - (days*24))
+    console.log(days, hours, mins)
     let daysChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997422726190997635');
     let hoursChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997422942357049374');
     let minsChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997428433330131014');
+    let backDaysChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997489610735239208');
+    let backHoursChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997489639768211546');
+    let backMinsChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997489665890328696');
     let lastCheckChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997429198727680061');
     let checkChannel = client.guilds.cache.get("997422341623664640").channels.resolve('997422342793863172');
     daysChannel.setName(`Days: ${days}`);
     hoursChannel.setName(`Hours: ${hours}`);
     minsChannel.setName(`Minutes: ${mins}`);
+    backDaysChannel.setName(`Days: ${days}`);
+    backHoursChannel.setName(`Hours: ${hours}`);
+    backMinsChannel.setName(`Minutes: ${mins}`);
     lastCheckChannel.setName(`${dayjs().format('DD/MM/YYYY HH:mm')}`);
     checkChannel.edit({ topic: `She's coming back in ${days} days, ${hours} hours and ${mins} minutes...` });
     const catUrl = await axios.get(`https://api.thecatapi.com/v1/images/search`).then(function (response) { return response.data[0].url; })
