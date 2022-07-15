@@ -1,0 +1,26 @@
+{
+  "name": "whenisshecomingback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheM-Dev/whenisshecomingback.git"
+  },
+  "author": "The M.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheM-Dev/whenisshecomingback/issues"
+  },
+  "homepage": "https://github.com/TheM-Dev/whenisshecomingback#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dayjs": "^1.11.3",
+    "discord.js": "^13.8.1",
+    "node-cron": "^3.0.1",
+    "uuid": "^8.3.2"
+  }
+}
