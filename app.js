@@ -35,12 +35,12 @@ async function setUp(){
 
     let dateNow = dayjs().add(2, 'hour')
 
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`◈ Day(s): ${daysToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`◈ Hour(s): ${hoursToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`◈ Minute(s): ${minsToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`◈ Day(s): ${daysToComeback}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`◈ Hour(s): ${hoursToComeback}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`◈ Minute(s): ${minsToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`◈ ${daysToMeet} day(s)`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`◈ ${hoursToMeet} hour(s)`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`◈ ${minsToMeet} minute(s)`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`◈ ${daysToComeback} day(s)`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`◈ ${hoursToComeback} hour(s)`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`◈ ${minsToComeback} minute(s)`);
     client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.lastCheckChannel).setName(`${dateNow.format('DD/MM/YYYY HH:mm')}`);
     const checkChannel = client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.checkChannel);
     checkChannel.edit({ topic: `**◈ She's coming back in ${daysToComeback} day(s), ${hoursToComeback} hour(s) and ${minsToComeback} minute(s)...**` });
@@ -48,7 +48,7 @@ async function setUp(){
     const embed = new MessageEmbed()
         .setColor('LUMINOUS_VIVID_PINK')
         .setThumbnail('https://cdn3.iconfinder.com/data/icons/miniglyphs/500/041-512.png')
-        .setDescription(`**When is she coming back?**\n> **${daysToComeback} day(s)**\n> **${hoursToComeback} hour(s)**\n> **${minsToComeback} minute(s)**\n\n**When will we meet?**\n> **${daysToMeet} day(s)**\n> **${hoursToMeet} hour(s)**\n> **${minsToMeet} minute(s)**`)
+        .setDescription(`**When is she coming back?**\n> ◈ **${daysToComeback} day(s)**\n> ◈ **${hoursToComeback} hour(s)**\n> ◈ **${minsToComeback} minute(s)**\n\n**When will we meet?**\n> ◈ **${daysToMeet} day(s)**\n> ◈ **${hoursToMeet} hour(s)**\n> ◈ **${minsToMeet} minute(s)**`)
         // .setImage(catUrl)
 
     checkChannel.send({
