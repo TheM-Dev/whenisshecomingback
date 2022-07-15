@@ -35,15 +35,15 @@ async function setUp(){
 
     let dateNow = dayjs().add(2, 'hour')
 
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`Days: ${daysToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`Hours: ${hoursToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`Minutes: ${minsToMeet}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`Days: ${daysToComeback}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`Hours: ${hoursToComeback}`);
-    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`Minutes: ${minsToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.daysChannel).setName(`◈ Day(s): ${daysToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.hoursChannel).setName(`◈ Hour(s): ${hoursToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.minsChannel).setName(`◈ Minute(s): ${minsToMeet}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backDaysChannel).setName(`◈ Day(s): ${daysToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backHoursChannel).setName(`◈ Hour(s): ${hoursToComeback}`);
+    client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.backMinsChannel).setName(`◈ Minute(s): ${minsToComeback}`);
     client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.lastCheckChannel).setName(`${dateNow.format('DD/MM/YYYY HH:mm')}`);
     const checkChannel = client.guilds.cache.get(cfg.serverId).channels.resolve(cfg.channels.checkChannel);
-    checkChannel.edit({ topic: `She's coming back in ${daysToComeback} days, ${hoursToComeback} hours and ${minsToComeback} minutes...` });
+    checkChannel.edit({ topic: `**◈ She's coming back in ${daysToComeback} day(s), ${hoursToComeback} hour(s) and ${minsToComeback} minute(s)...**` });
     // const catUrl = await axios.get(`https://api.thecatapi.com/v1/images/search`).then(function (response) { return response.data[0].url; })
     const embed = new MessageEmbed()
         .setColor('LUMINOUS_VIVID_PINK')
