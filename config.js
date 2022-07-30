@@ -1,7 +1,7 @@
 module.exports = {
     botToken: "", //moved to .env (botToken="XXXXX")
-    dateMeet: "2022-07-18T10:09:00+0100",
-    dateComeback: "2022-07-17T20:00:00+0100",
+    dateMeet: "2022-08-01T12:00:00+0200",
+    dateComeback: "2022-08-01T12:00:00+0200",
     channels: {
         daysChannel: "997422726190997635",
         hoursChannel: "997422942357049374",
